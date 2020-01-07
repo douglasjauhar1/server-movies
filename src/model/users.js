@@ -27,7 +27,7 @@ module.exports = {
     },
     logoutUser :  (body, email, id) => {
         return new Promise((resolve, reject) => {
-            conn.query(`UPDATE user SET ? WHERE email = ? AND id = ?`, [body, email, id], (err, result) => {
+            db.query(`UPDATE user SET ? WHERE email = ? AND id = ?`, [body, email, id], (err, result) => {
                 if(err) reject('error')
                 resolve(result)
             })

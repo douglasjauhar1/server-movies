@@ -3,10 +3,10 @@ const router = express.Router()
 
 const {
     userStatus,
-    logoutUser
+    userLogout
 } =require('../controller/users')
 
 router
     .put('/', userStatus)
-    // .delete('/', logoutUser)
+    .delete('/', userLogout)
 module.exports = router

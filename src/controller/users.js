@@ -18,9 +18,6 @@ module.exports = {
                 status: 1
             };
             const result = await modelUsers.verifyUser(body.status, email, password);
-            // console.log(result)
-            // console.log(result.message.split(' ')[2]);
-            // console.log(result.message.split(' ')[5]);
             let match = result.message.split(' ')[2];
             let change = result.message.split(' ')[5]
             if(match == 1) {
@@ -52,11 +49,8 @@ module.exports = {
                 updated_at: moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'),
                 status: 0
             };
-
             const result = await modelUsers.logoutUser(body, email, id);
-            // console.log(result)
             console.log(result.message.split(' ')[2]);
-            // console.log(result.message.split(' ')[5]);
             let match = result.message.split(' ')[2];
             if(match == 1){
                 response(res, 200, {message: "the user is logout"}) 
